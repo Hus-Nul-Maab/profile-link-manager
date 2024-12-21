@@ -1,8 +1,15 @@
 # Profile Link Manager
 
+# Profile Link Manager
+
 [![Node.js](https://img.shields.io/badge/Node.js-v18.x-green.svg)](https://nodejs.org/)
 [![Express.js](https://img.shields.io/badge/Express.js-v4.x-yellow.svg)](https://expressjs.com/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-v4.x-brightgreen.svg)](https://www.mongodb.com/)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6.svg?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![EJS](https://img.shields.io/badge/EJS-gray.svg?style=for-the-badge&logo=ejs&logoColor=yellow)](https://ejs.co/)
+[![React](https://img.shields.io/badge/React-20232A.svg?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
 
 ## Description
 
