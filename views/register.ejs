@@ -1,0 +1,64 @@
+<%- include('partials/header') %>
+
+<div class="container">
+    <h2>Create Account</h2>
+    <% if (typeof error !== 'undefined') { %>
+        <p class="error"><%= error %></p>
+    <% } %>
+
+    <% if (typeof message !== 'undefined') { %>
+        <p class="success"><%= message %></p>
+    <% } %>
+
+    <% if (typeof passwordErrors !== 'undefined') { %>
+        <ul class="error">
+            <% passwordErrors.forEach(error => { %>
+                <li><%= error %></li>
+            <% }); %>
+        </ul>
+    <% } %>
+
+    <form action="/users/register" method="POST">
+        <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+        </div>
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label>Gender:</label>
+            <input type="radio" name="gender" value="Male" id="male"> <label for="male">Male</label>
+            <input type="radio" name="gender" value="Female" id="female"> <label for="female">Female</label>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        <!-- Display password requirements -->
+        <div class="password-requirements">
+            <h4>Password Requirements:</h4>
+            <ul>
+                <li>At least 8 characters long</li>
+                <li>At least one uppercase letter</li>
+                <li>At least one lowercase letter</li>
+                <li>At least one number</li>
+                <li>At least one special character (!@#$%^&*)</li>
+            </ul>
+        </div>
+
+        <button type="submit" class="btn">Create Account</button>
+    </form>
+</div>
+
+<%- include('partials/footer') %>

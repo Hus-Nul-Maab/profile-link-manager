@@ -1,0 +1,51 @@
+<%- include('partials/header') %>
+
+<div class="container">
+    <h2><%= user.firstName %>'s Profile</h2>
+    <p>Username: <%= user.username %></p>
+    <p>Name: <%= user.firstName %> <%= user.lastName %></p>
+    <p>Email: <%= user.email %></p>
+    <p>Bio: <%= user.bio || 'Not provided' %></p>
+    <h3>Social Links:</h3>
+    <ul>
+        <% if (user.socialLinks.linkedin) { %>
+            <li><a href="<%= user.socialLinks.linkedin %>" target="_blank">LinkedIn</a></li>
+        <% } %>
+        <% if (user.socialLinks.facebook) { %>
+            <li><a href="<%= user.socialLinks.facebook %>" target="_blank">Facebook</a></li>
+        <% } %>
+        <% if (user.socialLinks.twitter) { %>
+            <li><a href="<%= user.socialLinks.twitter %>" target="_blank">Twitter</a></li>
+        <% } %>
+        <!-- Add more social links here -->
+    </ul>
+
+    <!-- Update Profile Form -->
+    <h3>Update Profile</h3>
+    <form action="/users/<%= user.username %>/update" method="POST">
+        <div class="form-group">
+            <label for="bio">Bio:</label>
+            <textarea id="bio" name="bio"><%= user.bio %></textarea>
+        </div>
+        <div class="form-group">
+            <label for="linkedin">LinkedIn:</label>
+            <input type="text" id="linkedin" name="socialLinks[linkedin]" value="<%= user.socialLinks.linkedin %>">
+            <label for="linkedin">Facebook:</label>
+            <input type="text" id="facebook" name="socialLinks[facebook]" value="<%= user.socialLinks.facebook %>">
+            <label for="linkedin">Twitter:</label>
+            <input type="text" id="twitter" name="socialLinks[twitter]" value="<%= user.socialLinks.twitter %>">
+        </div>
+        <!-- Add more fields for updating social links, etc. -->
+        <button type="submit">Update Profile</button>
+    </form>
+
+    <!-- Delete Profile Form (use with caution) -->
+    <form action="/users/<%= user.username %>/delete" method="POST">
+        <button type="submit" class="btn-danger">Delete Profile</button>
+    </form>
+
+    <!-- Logout Button -->
+    <a href="/users/logout" class="btn">Logout</a>
+</div>
+
+<%- include('partials/footer') %>
